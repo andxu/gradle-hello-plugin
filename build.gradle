@@ -1,0 +1,27 @@
+plugins {
+    id 'com.gradle.plugin-publish' version "0.10.1" apply false
+}
+
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'com.gradle.plugin-publish'
+apply plugin: 'maven-publish'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+gradlePlugin {
+    plugins {
+        greeting {
+            id = 'org.example.greeting'
+            implementationClass = 'org.example.greeting.GreetingPlugin'
+        }
+    }
+}
