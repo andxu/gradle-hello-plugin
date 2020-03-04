@@ -16,7 +16,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      echo $GRADLE_ENCRYPTED >$HOME/.gradle/gradle.encrypted.properties
+      mkdir $HOME/.gradle && echo $GRADLE_ENCRYPTED >$HOME/.gradle/gradle.encrypted.properties
 
 - task: Gradle@2
   inputs:
