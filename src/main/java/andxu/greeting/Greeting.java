@@ -1,4 +1,4 @@
-package org.example.greeting;
+package andxu.greeting;
 
 import org.gradle.api.DefaultTask;
 import org.gradle.api.tasks.Input;
