@@ -17,7 +17,7 @@ steps:
     secureFile: 'gradle.encrypted.properties'
 
 - script: |
-    mkdir -p $HOME/.gradle && mv $(gradleSecret.secureFilePath) 
+    mkdir -p $HOME/.gradle && mv $(gradleSecret.secureFilePath)
 
 
 - task: Gradle@2
