@@ -11,6 +11,13 @@ pool:
 
 steps:
 - task: Gradle@2
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo $GRADLE_ENCRYPTED >$HOME/.gradle/gradle.encrypted.properties
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
