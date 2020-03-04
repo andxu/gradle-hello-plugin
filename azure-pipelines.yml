@@ -11,6 +11,17 @@ pool:
 
 steps:
 
+
+- task: DownloadSecureFile@1
+  name: gradleSecret
+  displayName: 'Download Gradle secret'
+  inputs:
+    secureFile: 'gradle.encrypted.properties'
+
+- script: |
+    echo $(gradleSecret.secureFilePath)
+
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -22,6 +33,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
