@@ -16,9 +16,8 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      
       echo $GRADLE_ENCRYPTED >$HOME/.gradle/gradle.encrypted.properties
-  inputs:
+
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
     gradleOptions: '-Xmx3072m'
