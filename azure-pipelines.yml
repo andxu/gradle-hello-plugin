@@ -20,18 +20,6 @@ steps:
     mkdir -p $HOME/.gradle && mv $(gradleSecret.secureFilePath) $HOME/.gradle/gradle.encrypted.properties
 
 
-- task: Gradle@2
+- task: Bash@2
   inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'publishPlugins'
-
-- task: Bash@3
-  inputs:
-    script: 'rm $HOME/.gradle/gradle.encrypted.properties'
+    script: 'rm -f $HOME/.gradle/gradle.encrypted.properties'
