@@ -20,6 +20,6 @@ steps:
     mkdir -p $HOME/.gradle && mv $(gradleSecret.secureFilePath) $HOME/.gradle/gradle.encrypted.properties
 
 
-- task: Bash@2
+- task: CmdLine@2
   inputs:
     script: 'rm -f $HOME/.gradle/gradle.encrypted.properties'
