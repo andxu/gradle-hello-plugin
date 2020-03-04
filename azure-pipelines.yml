@@ -27,5 +27,5 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      echo $GRADLE_ENCRYPTED >$HOME/.gradle/gradle.encrypted.properties && gradle publishPlugins
+      echo $(gradle_encrypted) >$HOME/.gradle/gradle.encrypted.properties && gradle publishPlugins
 
